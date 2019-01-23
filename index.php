@@ -40,7 +40,7 @@ else{
 		$heleListe[] = $email;
 	}
 }
-
+$counterEmails = 0;
 class Request extends Threaded {
 	public $modtager;
 	public $listenummer;
@@ -51,6 +51,8 @@ class Request extends Threaded {
 		
     }
     public function run() {
+		global $counterEmails;
+		$counterEmails++;
 		$listenummer = $this->listenummer;
 		require_once __DIR__.'/vendor/phpmailer/phpmailer/src/Exception.php';
 		require_once __DIR__.'/vendor/phpmailer/phpmailer/src/PHPMailer.php';
@@ -99,7 +101,7 @@ class Request extends Threaded {
 		$mail->Subject = 'test';
 		$mail->Body = utf8_encode($message);
 		$mail->AltBody = 'test';
-
+		shell_exec('title=Mailer | Sent emails: '. $counterEmails);
 		//Send besked
 		if (!$mail->send()){
 			echo "\e[0;00;1;31m[\e[0;00;1;32m".$listenummer."\e[0;00;1;31m] \e[0;00;1;33m=> \e[0;00;1;31mSMTP\e[0;00;1;31m[\e[0;00;1;31m".$mail->Host."\e[0;00;1;31m] has not been sent to: $modtager";
