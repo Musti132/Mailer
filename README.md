@@ -1,5 +1,4 @@
-# Mailer
-Marketing mailer.
+# Marketing mailer.
 
 Use the emailliste.txt for your recipents (one per line)
 You can also use a Database, look for it in the config.php file.
