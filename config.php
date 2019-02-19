@@ -9,8 +9,8 @@ $setting['DATABASE'] = 'side';
 $setting['HOSTNAME'] = 'localhost';
 $setting['USERNAME'] = 'root';
 $setting['PASSWORD'] = '';
-$setting['COLUMN'] = 'emails';
-$setting['TABLE'] = 'emails';
+$setting['COLUMN'] = '';// LEAVE EMPTY FOR DEFAULT VALUE: emails
+$setting['TABLE'] = '';// LEAVE EMPTY FOR DEFAULT VALUE: emails
 
 $setting['SMTP_HOST'] = 'smtp.gmail.com';
 $setting['SMTP_USER'] = '';
